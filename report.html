@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Card</title>
+    
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .hed{
+            border-style: solid;
+            height: 100px;
+        width: 900px;       
+        margin-left: 300px;
+     }
+     .board{
+        margin-right: 140px;
+        margin-top: 40px;
+        font-size: 25px;
+     }
+    </style>
+</head>
+<body>
+    <p style="text-align: center;font-size:large"><b><u>Report Card</u></b></p><br>
+<div class="hed">
+    <img src="cbse.jpg" style="height: 90px ;width:100px" alt=""> 
+    <p class="board" style="float: right;">Centeral Board of Secondary Education</p>
+</div>
+<div class="hed" style="height:400px ;">
+    <br>
+    <table>
+        <tr>
+            <td><b>School Name:-</b></td>
+            <td><p id="sname">sample</p></td>
+        </tr>
+        <tr>
+            <td><b>Roll Number:-</b></td>
+            <td><p id="rnum">sample</p></td>
+        </tr>
+        <tr>
+            <td><b>Name:-</b></td>
+            <td><p id="name">sample</p></td>
+        </tr>
+    </table>
+        <br>
+    <table border="2px solid" style="width: 100%;">
+        <tr>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Min Marks</th>
+            <th>Max Marks</th>
+            <th>Marks Obtain</th>
+            <th>Remarks</th>
+
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>English</td>
+            <td>35</td>
+            <td>100</td>
+            <td ><p id="emrks"></p></td>
+            <td>.......</td>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>Hindi</td>
+            <td>35</td>
+            <td>100</td>
+            <td ><p id="hmrks"></p></td>
+            <td>.......</td>
+        </tr>
+        <tr>
+            <td>300</td>
+            <td>Physics</td>
+            <td>35</td>
+            <td>100</td>
+            <td ><p id="pmrks"></p></td>
+            <td>.......</td>
+        </tr>
+        <tr>
+            <td>400</td>
+            <td>Chemistry</td>
+            <td>35</td>
+            <td>100</td>
+            <td ><p id="cmrks"></p></td>
+            <td>.......</td>
+        </tr>
+        <tr>
+            <td>500</td>
+            <td>Maths</td>
+            <td>35</td>
+            <td>100</td>
+            <td ><p id="mmrks"></p></td>
+            <td>.......</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td><b>Total Marks:-</b></td>
+            <td><p id="tomrk">sample</p></td>
+        </tr>
+        <tr>
+            <td><b>Percentage:-</b></td>
+            <td><p id="pcent">sample</p></td>
+        </tr>
+        <tr>
+            <td><b>Division-</b></td>
+            <td><p id="dvs">sample</p></td>
+        </tr>
+    </table>
+
+</div>
+<script>
+    document.getElementById("rnum").innerHTML=localStorage.getItem("rollnumber");
+   if(localStorage.getItem("gender")=="male"){
+    document.getElementById("name").innerHTML="Mr "+localStorage.getItem("name")+ " s/o "+localStorage.getItem("fathername")
+;
+   }
+   else{
+    document.getElementById("name").innerHTML="Mrs "+localStorage.getItem("name")+ " d/o "+localStorage.getItem("fathername")
+;
+   }
+document.getElementById("sname").innerHTML=localStorage.getItem("schoolname");
+document.getElementById("pmrks").innerHTML=localStorage.getItem("physics");document.getElementById("mmrks").innerHTML=localStorage.getItem("maths");document.getElementById("hmrks").innerHTML=localStorage.getItem("hindi");document.getElementById("emrks").innerHTML=localStorage.getItem("english");document.getElementById("cmrks").innerHTML=localStorage.getItem("chemistry");
+document.getElementById("tomrk").innerHTML=localStorage.getItem("totalmarks");
+document.getElementById("pcent").innerHTML=localStorage.getItem("percent")+"%";
+document.getElementById("dvs").innerHTML=localStorage.getItem("division");
+
+
+</script>
+</body>
+</html>

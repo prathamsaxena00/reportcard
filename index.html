@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student information</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function parsevalue(){
+             var roll=document.getElementById("rn").value;
+             localStorage.setItem("rollnumber",roll);
+             var name=document.getElementById("fname").value;
+             localStorage.setItem("name",name);
+             var father=document.getElementById("fathname").value;
+             localStorage.setItem("fathername",father);
+             var school=document.getElementById("schoolname").value;
+             localStorage.setItem("schoolname",school);
+             var physics=document.getElementById("pm").value;
+             localStorage.setItem("physics",physics);
+             var english=document.getElementById("em").value;
+             localStorage.setItem("english",english);
+             var hindi=document.getElementById("hm").value;
+             localStorage.setItem("hindi",hindi);
+             var chemistry=document.getElementById("cm").value;
+             localStorage.setItem("chemistry",chemistry);
+             var maths=document.getElementById("mm").value;
+             localStorage.setItem("maths",maths);
+             var p=parseInt(physics);
+            var c=parseInt(chemistry);
+            var m=parseInt(maths);
+            var h=parseInt(hindi);
+            var e=parseInt(english);
+            var tm=p+c+m+e+h;
+            var pct=tm/5;
+            localStorage.setItem("totalmarks",tm);
+            localStorage.setItem("percent",pct);
+            var div;
+            if(pct>=60){
+              div="1st";
+            }
+            else if(pct>=50&&pct<60){
+                div="2nd";
+            }
+            else{
+                div="3rd";
+            }
+            localStorage.setItem("division",div);
+            var gen =document.getElementById("gender").value;
+           localStorage.setItem("gender",gen);
+            return false;
+            
+
+        }
+       
+          
+        
+    </script>
+</head>
+<body>
+
+<div>
+    <h1 style="text-align: center"><b>Student imformation</b></h1>
+  <form action="report.html" >
+    <label for="fname">Roll Number</label>
+    <input type="text" id="rn" name="roll" placeholder="Enter roll number">
+
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" name="fullname" placeholder="Enter full name"  >
+    <label for="fathname">Father's Name</label>
+    <input type="text" id="fathname" name="fathername" placeholder="Enter father's name">
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option >--select one--</option>
+
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+
+    </select>
+    <label for="schoolname">School Name</label>
+    <input type="text" id="schoolname" name="schoolname" placeholder="Enter School name">
+    <table>
+        <tr>
+            <td> <label for="english marks">English Marks</label></td>
+            <td><input type="number" id="em" name="englishmarks" placeholder="Marks in English"></td>
+        </tr>
+        
+        <tr>
+            <td> <label for="hindi marks">Hindi Marks</label></td>
+            <td><input type="number" id="hm" name="hindimarks" placeholder="Marks in Hindi"></td>
+        </tr>
+        <tr>
+            <td> <label for="physics marks">Physics Marks</label></td>
+            <td><input type="number" id="pm" name="physicsmarks" placeholder="Marks in Physics"></td>
+        </tr>
+        <tr>
+            <td> <label for="chemistry marks">Chemistry Marks</label></td>
+            <td><input type="number" id="cm" name="chemistrymarks" placeholder="Marks in Chemistry"></td>
+        </tr>
+        <tr>
+            <td> <label for="maths marks">Maths Marks</label></td>
+            <td><input type="number" id="mm" name="mathsmarks" placeholder="Marks in Maths"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit" onclick="parsevalue()">
+  </form>
+</div>
+
+</body>
+</html>
+
+
